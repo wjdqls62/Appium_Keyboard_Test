@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+<Device>
+    // 통신IP주소
+    <Host>127.0.0.1</Host>
+    // 포트번호
+    <Port>4723</Port>
+    // Device 식별번호
+    <deviceNum>PAF617_0503</deviceNum>
+    // ADB 식별번호
+    <deviceName>LGF800Lbe8a918</deviceName>
+    // OS 플랫폼
+    <platformName>android</platformName>
+    // 테스트 플랫폼
+    <automationName>appium</automationName>
+    // Target App의 APP 패키지명
+    <appPackage>sonjb.phillit.ime_counter</appPackage>
+    // Target App의 MainActivity명
+    <appActivity>sonjb.phillit.ime_counter.View.MainActivity</appActivity>
+    // 앱실행시 권한팝업 처리
+    <autoGrantPermissions>true</autoGrantPermissions>
+</Device>
+!-->
+
+<Device>
+    <Host>127.0.0.1</Host>
+    <Port>4723</Port>
+    <deviceNum>PAF617_0503</deviceNum>
+    <deviceName>LGF800Lbe8a918</deviceName>
+    <platformName>android</platformName>
+    <automationName>appium</automationName>
+    <appPackage>sonjb.phillit.ime_counter</appPackage>
+    <appActivity>sonjb.phillit.ime_counter.View.MainActivity</appActivity>
+    <autoGrantPermissions>true</autoGrantPermissions>
+</Device>
