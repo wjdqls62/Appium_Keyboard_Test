@@ -7,25 +7,16 @@ import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
 public class BaseDesiredCapabilities extends DesiredCapabilities {
     private String path = "C://Users/jeongbeen.son.PHILL-IT/IdeaProjects/test/src/main/resources/appium_device/device.xml";
-    private DocumentBuilder builder;
-    private DocumentBuilderFactory factory;
-    private Document document;
     private NodeList nodeList;
+    private XMLParser xmlParser;
     private String Host, Port, DeviceNum, DeviceName, DevicePlatform, automationName, appPackage, appActivity, autoGrantPermissions;
 
     private AppiumDriver<MobileElement> mDevice;
@@ -45,35 +36,23 @@ public class BaseDesiredCapabilities extends DesiredCapabilities {
     }
 
     private void xmlLoad(){
-        try {
-            factory = DocumentBuilderFactory.newInstance();
-            builder = factory.newDocumentBuilder();
-            document = builder.parse(path);
-            document.getDocumentElement().normalize();
+        xmlParser = new XMLParser(path);
+        nodeList = xmlParser.getList();
 
-            nodeList = document.getElementsByTagName("Device");
+        for(int i=0; i<nodeList.getLength(); i++){
+            Node node = nodeList.item(i);
+            Element element = (Element) node;
 
-            for(int i=0; i<nodeList.getLength(); i++){
-                Node node = nodeList.item(i);
-                Element element = (Element) node;
-
-                Host = getTagValue("Host", element);
-                Port = getTagValue("Port", element);
-                DeviceNum = getTagValue("deviceNum", element);
-                DeviceName = getTagValue("deviceName", element);
-                DevicePlatform = getTagValue("platformName", element);
-                automationName = getTagValue("automationName", element);
-                appPackage = getTagValue("appPackage", element);
-                appActivity = getTagValue("appActivity", element);
-                appActivity = getTagValue("appActivity", element);
-                autoGrantPermissions = getTagValue("autoGrantPermissions", element);
-            }
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace();
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+            Host = getTagValue("Host", element);
+            Port = getTagValue("Port", element);
+            DeviceNum = getTagValue("deviceNum", element);
+            DeviceName = getTagValue("deviceName", element);
+            DevicePlatform = getTagValue("platformName", element);
+            automationName = getTagValue("automationName", element);
+            appPackage = getTagValue("appPackage", element);
+            appActivity = getTagValue("appActivity", element);
+            appActivity = getTagValue("appActivity", element);
+            autoGrantPermissions = getTagValue("autoGrantPermissions", element);
         }
     }
 
