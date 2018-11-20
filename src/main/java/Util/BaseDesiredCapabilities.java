@@ -14,9 +14,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class BaseDesiredCapabilities extends DesiredCapabilities {
-    private String path = "C://Users/jeongbeen.son.PHILL-IT/IdeaProjects/test/src/main/resources/appium_device/device.xml";
+    private String xmlPath = "C://Users/jeongbeen.son.PHILL-IT/IdeaProjects/test/src/main/resources/appium_device/device.xml";
+    private String capturePath = "D:TEST/_IMG/img.png";
     private NodeList nodeList;
-    private XMLParser xmlParser;
+    private XMLParseManager xmlParser;
+    private ScreenCaptureManager captureManager;
     private String Host, Port, DeviceNum, DeviceName, DevicePlatform, automationName, appPackage, appActivity, autoGrantPermissions;
 
     private AppiumDriver<MobileElement> mDevice;
@@ -36,7 +38,7 @@ public class BaseDesiredCapabilities extends DesiredCapabilities {
     }
 
     private void xmlLoad(){
-        xmlParser = new XMLParser(path);
+        xmlParser = new XMLParseManager(xmlPath);
         nodeList = xmlParser.getList();
 
         for(int i=0; i<nodeList.getLength(); i++){
@@ -78,6 +80,8 @@ public class BaseDesiredCapabilities extends DesiredCapabilities {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
+
+        captureManager = new ScreenCaptureManager(this, capturePath);
     }
 
     public void touchPoint(int x, int y){
@@ -94,6 +98,10 @@ public class BaseDesiredCapabilities extends DesiredCapabilities {
                 e.printStackTrace();
             }
         }
+    }
+
+    public void takeScreenShot(){
+        captureManager.takeScreenShot();
     }
 
     private static String getTagValue(String sTag, Element eElement) {

@@ -9,14 +9,14 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 
-public class XMLParser {
+public class XMLParseManager {
     private DocumentBuilder builder;
     private DocumentBuilderFactory factory;
     private Document document;
     private NodeList nodeList;
     private String xmlPath;
 
-    public XMLParser(String xmlPath){
+    public XMLParseManager(String xmlPath){
         try {
             this.xmlPath = xmlPath;
             factory = DocumentBuilderFactory.newInstance();
