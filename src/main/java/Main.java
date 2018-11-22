@@ -8,11 +8,25 @@ public class Main {
     private WebDriverWait wait;
 
     public static void main(String args[]){
-        BaseDesiredCapabilities baseDesiredCapabilities = new BaseDesiredCapabilities();
-        driver = baseDesiredCapabilities.getDriver();
+        BaseDesiredCapabilities mDevice = new BaseDesiredCapabilities();
+        driver = mDevice.getDriver();
 
-        baseDesiredCapabilities.userWait(3000);
-        baseDesiredCapabilities.takeScreenShot();
+        mDevice.userWait(3000);
+
+        // Y
+        mDevice.touchPoint(780, 1945);
+        mDevice.userWait(1000);
+
+        // o
+        mDevice.touchPoint(1210, 1945);
+        mDevice.userWait(1000);
+
+        // u
+        mDevice.touchPoint(935, 1945);
+        mDevice.userWait(1000);
+
+        mDevice.takeScreenShot();
+
 
         }
     }

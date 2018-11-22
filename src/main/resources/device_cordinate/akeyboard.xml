@@ -1,0 +1,93 @@
+<Keyboard>
+    <Key>
+        <value>Q</value>
+        <symbol>false</symbol>
+        <x>80</x>
+        <y>1940</y>
+        <x1>0</x1>
+        <x2>0</x2>
+        <count>1</count>
+    </Key>
+
+    <Key>
+        <value>W</value>
+        <symbol>false</symbol>
+        <x>225</x>
+        <y>1940</y>
+        <x1>0</x1>
+        <x2>0</x2>
+        <count>1</count>
+    </Key>
+
+    <Key>
+        <value>E</value>
+        <symbol>false</symbol>
+        <x>365</x>
+        <y>1940</y>
+        <x1>0</x1>
+        <x2>0</x2>
+        <count>1</count>
+    </Key>
+
+    <Key>
+        <value>T</value>
+        <symbol>false</symbol>
+        <x>650</x>
+        <y>1940</y>
+        <x1>0</x1>
+        <x2>0</x2>
+        <count>1</count>
+    </Key>
+
+    <Key>
+        <value>Y</value>
+        <symbol>false</symbol>
+        <x>790</x>
+        <y>1940</y>
+        <x1>0</x1>
+        <x2>0</x2>
+        <count>1</count>
+    </Key>
+
+    <Key>
+        <value>U</value>
+        <symbol>false</symbol>
+        <x>930</x>
+        <y>1940</y>
+        <x1>0</x1>
+        <x2>0</x2>
+        <count>1</count>
+    </Key>
+
+    <Key>
+        <value>I</value>
+        <symbol>false</symbol>
+        <x>1075</x>
+        <y>1940</y>
+        <x1>0</x1>
+        <x2>0</x2>
+        <count>1</count>
+    </Key>
+
+    <Key>
+        <value>O</value>
+        <symbol>false</symbol>
+        <x>1210</x>
+        <y>1940</y>
+        <x1>0</x1>
+        <x2>0</x2>
+        <count>1</count>
+    </Key>
+
+    <Key>
+        <value>P</value>
+        <symbol>false</symbol>
+        <x>1355</x>
+        <y>1940</y>
+        <x1>0</x1>
+        <x2>0</x2>
+        <count>1</count>
+    </Key>
+
+
+</Keyboard>

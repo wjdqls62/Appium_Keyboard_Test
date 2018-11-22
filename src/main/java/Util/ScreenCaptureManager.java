@@ -13,36 +13,40 @@ public class ScreenCaptureManager {
     private String capturePath;
     private BufferedImage cutImage;
     private BaseDesiredCapabilities mDevice;
+    private OCRManager ocrManager;
 
     public ScreenCaptureManager(BaseDesiredCapabilities mDevice, String capturePath){
         this.mDevice = mDevice;
         this.capturePath = capturePath;
+        ocrManager = new OCRManager();
     }
 
-    // 디바이스를 캡쳐하여 경로에 저장한다.
-    public void takeScreenShot(){
+    // 디바이스를 캡쳐하여 경로에 저장 후 인식된 문자를 Return한다.
+    public String takeScreenShot(){
+        String result = "";
         try {
             temp = mDevice.getDriver().getScreenshotAs(OutputType.FILE);
             file = new File("D:TEST/_IMG/img.png");
             FileUtils.copyFile(temp, file);
-        } catch (IOException e) {e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }finally {
             temp = null;
         }
 
-        cropImage();
+        result = ocrManager.doOCR(file);
 
-
+        return result;
     }
 
     // 사용자가 지정한 좌표값으로 이미지를 자른다.
-    public void cropImage(){
-        try {
-            cutImage = ImageIO.read(file);
-            cutImage.getSubimage(3, 1520, 1431, 128);
-            ImageIO.write(cutImage, "png", new File(capturePath));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+    //public void cropImage(){
+    //    try {
+    //        cutImage = ImageIO.read(file);
+    //        cutImage.getSubimage(3, 1520, 1431, 128);
+    //        ImageIO.write(cutImage, "png", new File(capturePath));
+    //    } catch (IOException e) {
+    //        e.printStackTrace();
+    //    }
+    //}
 }

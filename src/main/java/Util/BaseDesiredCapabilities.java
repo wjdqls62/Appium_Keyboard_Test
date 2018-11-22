@@ -12,11 +12,14 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.ArrayList;
 
 public class BaseDesiredCapabilities extends DesiredCapabilities {
-    private String xmlPath = "C://Users/jeongbeen.son.PHILL-IT/IdeaProjects/test/src/main/resources/appium_device/device.xml";
+    private String appiumXmlPath = "C://Users/jeongbeen.son.PHILL-IT/IdeaProjects/test/src/main/resources/appium_device/device.xml";
+    private String keyboardLayoutXmlPath = "C://Users/jeongbeen.son.PHILL-IT/IdeaProjects/test/src/main/resources/appium_device/akeyboard.xml";
     private String capturePath = "D:TEST/_IMG/img.png";
-    private NodeList nodeList;
+    private NodeList deviceNodeList, keyboardNodeList;
+    private ArrayList<Keyboard_Layout> keyboardLayout;
     private XMLParseManager xmlParser;
     private ScreenCaptureManager captureManager;
     private String Host, Port, DeviceNum, DeviceName, DevicePlatform, automationName, appPackage, appActivity, autoGrantPermissions;
@@ -38,11 +41,11 @@ public class BaseDesiredCapabilities extends DesiredCapabilities {
     }
 
     private void xmlLoad(){
-        xmlParser = new XMLParseManager(xmlPath);
-        nodeList = xmlParser.getList();
+        xmlParser = new XMLParseManager(appiumXmlPath, keyboardLayoutXmlPath);
+        deviceNodeList = xmlParser.getList("Device");
 
-        for(int i=0; i<nodeList.getLength(); i++){
-            Node node = nodeList.item(i);
+        for(int i=0; i<deviceNodeList.getLength(); i++){
+            Node node = deviceNodeList.item(i);
             Element element = (Element) node;
 
             Host = getTagValue("Host", element);
@@ -56,6 +59,26 @@ public class BaseDesiredCapabilities extends DesiredCapabilities {
             appActivity = getTagValue("appActivity", element);
             autoGrantPermissions = getTagValue("autoGrantPermissions", element);
         }
+
+
+        keyboardNodeList = xmlParser.getList("Keyboard");
+        for(int i=0; i<keyboardNodeList.getLength(); i++){
+            Node node = keyboardNodeList.item(i);
+            Element element = (Element) node;
+
+            Host = getTagValue("Host", element);
+            Port = getTagValue("Port", element);
+            DeviceNum = getTagValue("deviceNum", element);
+            DeviceName = getTagValue("deviceName", element);
+            DevicePlatform = getTagValue("platformName", element);
+            automationName = getTagValue("automationName", element);
+            appPackage = getTagValue("appPackage", element);
+            appActivity = getTagValue("appActivity", element);
+            appActivity = getTagValue("appActivity", element);
+            autoGrantPermissions = getTagValue("autoGrantPermissions", element);
+        }
+
+
     }
 
     private void setupTest(){
@@ -82,10 +105,11 @@ public class BaseDesiredCapabilities extends DesiredCapabilities {
         }
 
         captureManager = new ScreenCaptureManager(this, capturePath);
+
     }
 
     public void touchPoint(int x, int y){
-        pointOption.withCoordinates(80, 1935);
+        pointOption.withCoordinates(x, y);
         touchAction.tap(pointOption);
         mDevice.performTouchAction(touchAction);
     }
@@ -100,8 +124,13 @@ public class BaseDesiredCapabilities extends DesiredCapabilities {
         }
     }
 
-    public void takeScreenShot(){
-        captureManager.takeScreenShot();
+    public String takeScreenShot(){
+        return captureManager.takeScreenShot();
+    }
+
+    // 추천단어를 1문자 단위로 입력 후 추천단어를 인식한다.
+    public void inputRecommandWord(String word){
+
     }
 
     private static String getTagValue(String sTag, Element eElement) {
@@ -111,6 +140,8 @@ public class BaseDesiredCapabilities extends DesiredCapabilities {
 
         return nValue.getNodeValue();
     }
+
+
 
 
 }

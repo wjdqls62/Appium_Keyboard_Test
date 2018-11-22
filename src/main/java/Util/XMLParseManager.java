@@ -1,6 +1,7 @@
 package Util;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
@@ -13,27 +14,60 @@ public class XMLParseManager {
     private DocumentBuilder builder;
     private DocumentBuilderFactory factory;
     private Document document;
-    private NodeList nodeList;
-    private String xmlPath;
+    private NodeList deviceNodeList;
+    private NodeList keyboardNodeList;
+    private String deviceXMLPath, keyboardXMLPath;
 
-    public XMLParseManager(String xmlPath){
-        try {
-            this.xmlPath = xmlPath;
+    public XMLParseManager(String deviceXMLPath, String keyboardXMLPath){
+            this.deviceXMLPath = deviceXMLPath;
+            this.keyboardXMLPath = keyboardXMLPath;
             factory = DocumentBuilderFactory.newInstance();
+
+        try {
             builder = factory.newDocumentBuilder();
-            document = builder.parse(xmlPath);
-            document.getDocumentElement().normalize();
-            nodeList = document.getElementsByTagName("Device");
         } catch (ParserConfigurationException e) {
-            e.printStackTrace();
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public NodeList getList(){
-        return nodeList;
+
+        public void parseXML(String Mode){
+            if(Mode.equals("Device")){
+                try {
+                    document = builder.parse(deviceXMLPath);
+                    document.getDocumentElement().normalize();
+                    deviceNodeList = document.getElementsByTagName("Device");
+                } catch (SAXException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }else if(Mode.equals("Keyboard")){
+                try {
+                    document = builder.parse(keyboardXMLPath);
+                    document.getDocumentElement().normalize();
+                    deviceNodeList = document.getElementsByTagName("Keyboard");
+                } catch (SAXException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+
+
+
+
+        }
+
+
+
+    public NodeList getList(String Mode){
+        if(Mode.equals("Device")){
+            return deviceNodeList;
+        }else if(Mode.equals("Keyboard")){
+            return keyboardNodeList;
+        }
+        return null;
     }
 }
