@@ -1,7 +1,7 @@
 package Util;
 
 public class Keyboard_Layout {
-    private String keyValue;
-    private boolean symbol = false;
-    private int x,y, x1, x2, count;
+    public String keyValue;
+    public boolean symbol = false;
+    public int x,y, x1, y1, count;
 }

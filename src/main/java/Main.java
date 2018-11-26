@@ -13,19 +13,7 @@ public class Main {
 
         mDevice.userWait(3000);
 
-        // Y
-        mDevice.touchPoint(780, 1945);
-        mDevice.userWait(1000);
-
-        // o
-        mDevice.touchPoint(1210, 1945);
-        mDevice.userWait(1000);
-
-        // u
-        mDevice.touchPoint(935, 1945);
-        mDevice.userWait(1000);
-
-        mDevice.takeScreenShot();
+        mDevice.sensingPredictionWord("POWER");
 
 
         }

@@ -22,8 +22,8 @@ public class ScreenCaptureManager {
     }
 
     // 디바이스를 캡쳐하여 경로에 저장 후 인식된 문자를 Return한다.
-    public String takeScreenShot(){
-        String result = "";
+    public String[] takeScreenShot(){
+        String result[];
         try {
             temp = mDevice.getDriver().getScreenshotAs(OutputType.FILE);
             file = new File("D:TEST/_IMG/img.png");
@@ -35,6 +35,10 @@ public class ScreenCaptureManager {
         }
 
         result = ocrManager.doOCR(file);
+
+        for(int i=0; i<result.length; i++){
+            System.out.println("Prediction Word["+i+"] : "+ result[i]);
+        }
 
         return result;
     }

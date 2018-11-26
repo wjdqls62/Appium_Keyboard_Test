@@ -10,7 +10,7 @@ import java.io.File;
 
 public class OCRManager {
     private Tesseract tesseract;
-    private String tesseractResult;
+    private String[] tesseractResult;
     private String tessDataPath = "C://Program Files (x86)/Tesseract-OCR/tessdata";
 
     public OCRManager(){
@@ -24,12 +24,11 @@ public class OCRManager {
         tesseract.setLanguage("eng");
     }
 
-    public String doOCR(File file){
+    public String[] doOCR(File file){
         // 추천단어가 표시되는 영역의 사각형 좌표
         Rectangle rect = new Rectangle(23, 1525, 1404, 115);
         try {
-            tesseractResult = tesseract.doOCR(file, rect);
-            System.out.println("String : " + tesseractResult);
+            tesseractResult = tesseract.doOCR(file, rect).split("\\s");
         } catch (TesseractException e) {
             e.printStackTrace();
         }

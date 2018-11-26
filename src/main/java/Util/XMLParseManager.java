@@ -31,41 +31,36 @@ public class XMLParseManager {
     }
 
 
-        public void parseXML(String Mode){
-            if(Mode.equals("Device")){
-                try {
-                    document = builder.parse(deviceXMLPath);
-                    document.getDocumentElement().normalize();
-                    deviceNodeList = document.getElementsByTagName("Device");
-                } catch (SAXException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }else if(Mode.equals("Keyboard")){
-                try {
-                    document = builder.parse(keyboardXMLPath);
-                    document.getDocumentElement().normalize();
-                    deviceNodeList = document.getElementsByTagName("Keyboard");
-                } catch (SAXException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+    public void parseXML(String Mode){
+        if(Mode.equals("Device")){
+            try {
+                document = builder.parse(deviceXMLPath);
+                document.getDocumentElement().normalize();
+                deviceNodeList = document.getElementsByTagName(Mode);
+            } catch (SAXException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-
-
-
-
-
+        }else if(Mode.equals("Key")){
+            try {
+                document = builder.parse(keyboardXMLPath);
+                document.getDocumentElement().normalize();
+                keyboardNodeList = document.getElementsByTagName(Mode);
+            } catch (SAXException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+    }
 
 
 
     public NodeList getList(String Mode){
         if(Mode.equals("Device")){
             return deviceNodeList;
-        }else if(Mode.equals("Keyboard")){
+        }else if(Mode.equals("Key")){
             return keyboardNodeList;
         }
         return null;
