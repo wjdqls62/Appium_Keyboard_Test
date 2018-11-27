@@ -1,6 +1,7 @@
 import Util.BaseDesiredCapabilities;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Main {
@@ -12,9 +13,7 @@ public class Main {
         driver = mDevice.getDriver();
 
         mDevice.userWait(3000);
-
-        mDevice.sensingPredictionWord("POWER");
-
+        mDevice.sensingPredictionWord("Computer");
 
         }
     }

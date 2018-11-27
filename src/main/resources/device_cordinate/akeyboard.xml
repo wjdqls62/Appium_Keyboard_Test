@@ -99,5 +99,174 @@
         <count>1</count>
     </Key>
 
+    <Key>
+        <value>A</value>
+        <symbol>false</symbol>
+        <x>150</x>
+        <y>2150</y>
+        <x1>0</x1>
+        <y1>0</y1>
+        <count>1</count>
+    </Key>
 
+    <Key>
+        <value>S</value>
+        <symbol>false</symbol>
+        <x>295</x>
+        <y>2150</y>
+        <x1>0</x1>
+        <y1>0</y1>
+        <count>1</count>
+    </Key>
+
+    <Key>
+        <value>D</value>
+        <symbol>false</symbol>
+        <x>435</x>
+        <y>2150</y>
+        <x1>0</x1>
+        <y1>0</y1>
+        <count>1</count>
+    </Key>
+
+    <Key>
+        <value>F</value>
+        <symbol>false</symbol>
+        <x>575</x>
+        <y>2150</y>
+        <x1>0</x1>
+        <y1>0</y1>
+        <count>1</count>
+    </Key>
+
+    <Key>
+        <value>G</value>
+        <symbol>false</symbol>
+        <x>720</x>
+        <y>2150</y>
+        <x1>0</x1>
+        <y1>0</y1>
+        <count>1</count>
+    </Key>
+
+    <Key>
+        <value>H</value>
+        <symbol>false</symbol>
+        <x>860</x>
+        <y>2150</y>
+        <x1>0</x1>
+        <y1>0</y1>
+        <count>1</count>
+    </Key>
+
+    <Key>
+        <value>J</value>
+        <symbol>false</symbol>
+        <x>1000</x>
+        <y>2150</y>
+        <x1>0</x1>
+        <y1>0</y1>
+        <count>1</count>
+    </Key>
+
+    <Key>
+        <value>K</value>
+        <symbol>false</symbol>
+        <x>1140</x>
+        <y>2150</y>
+        <x1>0</x1>
+        <y1>0</y1>
+        <count>1</count>
+    </Key>
+
+    <Key>
+        <value>L</value>
+        <symbol>false</symbol>
+        <x>1285</x>
+        <y>2150</y>
+        <x1>0</x1>
+        <y1>0</y1>
+        <count>1</count>
+    </Key>
+
+    <Key>
+        <value>Z</value>
+        <symbol>false</symbol>
+        <x>290</x>
+        <y>2350</y>
+        <x1>0</x1>
+        <y1>0</y1>
+        <count>1</count>
+    </Key>
+
+    <Key>
+        <value>X</value>
+        <symbol>false</symbol>
+        <x>430</x>
+        <y>2350</y>
+        <x1>0</x1>
+        <y1>0</y1>
+        <count>1</count>
+    </Key>
+
+    <Key>
+        <value>C</value>
+        <symbol>false</symbol>
+        <x>580</x>
+        <y>2350</y>
+        <x1>0</x1>
+        <y1>0</y1>
+        <count>1</count>
+    </Key>
+
+    <Key>
+        <value>V</value>
+        <symbol>false</symbol>
+        <x>729</x>
+        <y>2350</y>
+        <x1>0</x1>
+        <y1>0</y1>
+        <count>1</count>
+    </Key>
+
+    <Key>
+        <value>B</value>
+        <symbol>false</symbol>
+        <x>860</x>
+        <y>2350</y>
+        <x1>0</x1>
+        <y1>0</y1>
+        <count>1</count>
+    </Key>
+
+    <Key>
+        <value>N</value>
+        <symbol>false</symbol>
+        <x>1000</x>
+        <y>2350</y>
+        <x1>0</x1>
+        <y1>0</y1>
+        <count>1</count>
+    </Key>
+
+    <Key>
+        <value>M</value>
+        <symbol>false</symbol>
+        <x>1140</x>
+        <y>2350</y>
+        <x1>0</x1>
+        <y1>0</y1>
+        <count>1</count>
+    </Key>
+
+    <!-- Space Bar-->
+    <Key>
+        <value> </value>
+        <symbol>true</symbol>
+        <x>790</x>
+        <y>2550</y>
+        <x1>0</x1>
+        <y1>0</y1>
+        <count>1</count>
+    </Key>
 </Keyboard>

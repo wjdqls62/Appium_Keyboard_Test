@@ -18,17 +18,24 @@ public class OCRManager {
         initTessract();
     }
 
+    // Tess4J를 초기화 한다.
     private void initTessract(){
         tesseract.setDatapath(tessDataPath);
         tesseract.setOcrEngineMode(TessAPI.TessOcrEngineMode.OEM_DEFAULT);
         tesseract.setLanguage("eng");
     }
 
+    // 스크린샷의 사각형 영역에서 텍스트를 읽어온 후 배열로 받아온다.
     public String[] doOCR(File file){
         // 추천단어가 표시되는 영역의 사각형 좌표
         Rectangle rect = new Rectangle(23, 1525, 1404, 115);
         try {
             tesseractResult = tesseract.doOCR(file, rect).split("\\s");
+            for(int i=0; i<tesseractResult.length; i++){
+                if(tesseractResult[i].equals("") || tesseractResult[i].equals("_")){
+                    System.out.println("Null!!!!!!");
+                }
+            }
         } catch (TesseractException e) {
             e.printStackTrace();
         }

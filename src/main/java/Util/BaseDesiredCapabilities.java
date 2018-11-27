@@ -18,6 +18,7 @@ public class BaseDesiredCapabilities extends DesiredCapabilities {
     private String appiumXmlPath = "C://Users/jeongbeen.son.PHILL-IT/IdeaProjects/test/src/main/resources/appium_device/device.xml";
     private String keyboardLayoutXmlPath = "C://Users/jeongbeen.son.PHILL-IT/IdeaProjects/test/src/main/resources/device_cordinate/akeyboard.xml";
     private String capturePath = "D:TEST/_IMG/img.png";
+    private boolean autoSpacing = true;
     private NodeList deviceNodeList, keyboardNodeList;
     private ArrayList<Keyboard_Layout> keyboardLayout;
     private XMLParseManager xmlParser;
@@ -77,11 +78,7 @@ public class BaseDesiredCapabilities extends DesiredCapabilities {
             inputData.y1 = getTagValueToInt("y1", keyInfo);
             inputData.count = getTagValueToInt("count", keyInfo);
             keyboardLayout.add(inputData);
-            System.out.println("Value : " + inputData.keyValue);
-            System.out.println("symbol : " + inputData.symbol);
         }
-
-
     }
 
     private void setupTest(){
@@ -111,13 +108,14 @@ public class BaseDesiredCapabilities extends DesiredCapabilities {
 
     }
 
+    // x, y좌표를 터치한다.
     public void touchPoint(int x, int y){
         pointOption.withCoordinates(x, y);
         touchAction.tap(pointOption);
         mDevice.performTouchAction(touchAction);
-        System.out.print("TouchEvent-x:"+x+" y:"+y);
     }
 
+    // DelayTime을 준다.
     public void userWait(long time){
         synchronized (mDevice){
             try {
@@ -128,6 +126,7 @@ public class BaseDesiredCapabilities extends DesiredCapabilities {
         }
     }
 
+    // 스크린샷을 찍어 설정된 영역의 String을 인식 후 반환한다.
     public String[] takeScreenShot(){
         return captureManager.takeScreenShot();
     }
@@ -146,24 +145,56 @@ public class BaseDesiredCapabilities extends DesiredCapabilities {
         }
     }
 
+    // 파라미터의 단어를 한글자 단위로 입력하면서 추천단어를 읽고 지정된 영역에 존재하는지 확인한다.
+    // 추천단어에 존재할 경우 해당 추천단어 영역을 터치한다.
     public void sensingPredictionWord(String inputWord){
         char[] temp = inputWord.toCharArray();
+        String[] predictResult = takeScreenShot();
+        String symbol = null;
 
+        // 글자를 누르지 않은 상태에서 해당 추천단어가 바로 표시되어 있을경우 추천단어를 선택한다.
+        if(isPredictionWordCheck(predictResult, inputWord)){
+            for(int i=0; i<predictResult.length; i++){
+                if(predictResult.equals(inputWord)) touchPredictionWord(i);
+                break;
+            }
+            // 입력글자 마지막에 끝기호가 붙었을 경우
+            symbol = isSymbolCheck(inputWord);
+            if(symbol != null){
+                inputMethod(symbol);
+            }
+            return;
+        }
+
+        // 총 입력해야될 단어
         for(int i=0; i<temp.length; i++){
+            // 입력단어를 한글자단위로 쪼개 입력한다.
             for(int j=0; j<keyboardLayout.size(); j++){
-                if(keyboardLayout.get(j).keyValue.equals(String.valueOf(temp[i]))){
+                String op = keyboardLayout.get(j).keyValue;
+                if(op.equals(String.valueOf(temp[i])) || op.toUpperCase().equals(String.valueOf(temp[i]).toUpperCase())){
                     touchPoint(keyboardLayout.get(j).x, keyboardLayout.get(j).y);
                     userWait(500);
                     break;
                 }
             }
-            if(isPredictionWordCheck(takeScreenShot(), inputWord)){
-                touchPredictionWord(i);
+
+            // 한글자 입력 후 추천단어가 표시되었을 경우
+            predictResult = takeScreenShot();
+            for(int l=0; l<predictResult.length; l++){
+                System.out.println("predictResult["+l+"]:"+predictResult[l]);
+            }
+            if(isPredictionWordCheck(predictResult, inputWord)){
+                // 추천단어를 선택 후 마침표등의 끝기호가 존재할 경우 해당 기호를 누른 후 스페이스바를 누른다.
+                symbol = isSymbolCheck(inputWord);
+                if(symbol != null) {
+                    inputMethod(symbol);
+                }
                 break;
             }
         }
     }
 
+    // 대문자로 변환 후 String 비교를 한다.
     private boolean isPredictionWordCheck(String[] inputWord, String orgWord){
         if(inputWord != null){
             for(int i=0; i<inputWord.length; i++){
@@ -176,6 +207,7 @@ public class BaseDesiredCapabilities extends DesiredCapabilities {
         return false;
     }
 
+    // 3개의 추천단어의 좌표를 터치한다.
     private void touchPredictionWord(int predictionCount){
         switch (predictionCount){
             case 0 :
@@ -188,6 +220,24 @@ public class BaseDesiredCapabilities extends DesiredCapabilities {
                 touchPoint(1100, 1585);
                 break;
         }
+
+        System.out.println("Prediction Count : " + predictionCount);
+    }
+
+    private String isSymbolCheck(String inputWord){
+        char[] temp = inputWord.toCharArray();
+        if(String.valueOf(temp[temp.length-1]).contains(".")){
+            return ".";
+        }else if(String.valueOf(temp[temp.length-1]).contains(",")){
+            return ",";
+        }else if(String.valueOf(temp[temp.length-1]).contains("!")){
+            return "!";
+        }else if(String.valueOf(temp[temp.length-1]).contains("?")){
+            return "?";
+        }else if(String.valueOf(temp[temp.length-1]).contains("~")){
+            return "~";
+        }
+        return null;
     }
 
     private String getTagValue(String sTag, Element eElement) {
@@ -213,10 +263,4 @@ public class BaseDesiredCapabilities extends DesiredCapabilities {
 
         return Boolean.getBoolean(nValue.getNodeValue());
     }
-
-
-
-
-
-
 }

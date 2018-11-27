@@ -36,21 +36,6 @@ public class ScreenCaptureManager {
 
         result = ocrManager.doOCR(file);
 
-        for(int i=0; i<result.length; i++){
-            System.out.println("Prediction Word["+i+"] : "+ result[i]);
-        }
-
         return result;
     }
-
-    // 사용자가 지정한 좌표값으로 이미지를 자른다.
-    //public void cropImage(){
-    //    try {
-    //        cutImage = ImageIO.read(file);
-    //        cutImage.getSubimage(3, 1520, 1431, 128);
-    //        ImageIO.write(cutImage, "png", new File(capturePath));
-    //    } catch (IOException e) {
-    //        e.printStackTrace();
-    //    }
-    //}
 }
