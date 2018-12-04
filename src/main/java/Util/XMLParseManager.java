@@ -55,8 +55,6 @@ public class XMLParseManager {
         }
     }
 
-
-
     public NodeList getList(String Mode){
         if(Mode.equals("Device")){
             return deviceNodeList;

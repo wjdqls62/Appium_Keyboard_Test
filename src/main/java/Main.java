@@ -12,8 +12,8 @@ public class Main {
         BaseDesiredCapabilities mDevice = new BaseDesiredCapabilities();
         driver = mDevice.getDriver();
 
-        mDevice.userWait(3000);
-        mDevice.sensingPredictionWord("Computer");
+        mDevice.sensingPredictionWord("");
+
 
         }
     }

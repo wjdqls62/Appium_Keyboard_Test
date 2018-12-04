@@ -3,7 +3,7 @@
         <value>Q</value>
         <symbol>false</symbol>
         <x>80</x>
-        <y>1940</y>
+        <y>1910</y>
         <x1>0</x1>
         <y1>0</y1>
         <count>1</count>
@@ -13,7 +13,7 @@
         <value>W</value>
         <symbol>false</symbol>
         <x>225</x>
-        <y>1940</y>
+        <y>1910</y>
         <x1>0</x1>
         <y1>0</y1>
         <count>1</count>
@@ -23,7 +23,7 @@
         <value>E</value>
         <symbol>false</symbol>
         <x>365</x>
-        <y>1940</y>
+        <y>1910</y>
         <x1>0</x1>
         <y1>0</y1>
         <count>1</count>
@@ -33,7 +33,7 @@
         <value>R</value>
         <symbol>false</symbol>
         <x>500</x>
-        <y>1940</y>
+        <y>1910</y>
         <x1>0</x1>
         <y1>0</y1>
         <count>1</count>
@@ -43,7 +43,7 @@
         <value>T</value>
         <symbol>false</symbol>
         <x>650</x>
-        <y>1940</y>
+        <y>1910</y>
         <x1>0</x1>
         <y1>0</y1>
         <count>1</count>
@@ -53,7 +53,7 @@
         <value>Y</value>
         <symbol>false</symbol>
         <x>790</x>
-        <y>1940</y>
+        <y>1910</y>
         <x1>0</x1>
         <y1>0</y1>
         <count>1</count>
@@ -63,7 +63,7 @@
         <value>U</value>
         <symbol>false</symbol>
         <x>930</x>
-        <y>1940</y>
+        <y>1910</y>
         <x1>0</x1>
         <y1>0</y1>
         <count>1</count>
@@ -73,7 +73,7 @@
         <value>I</value>
         <symbol>false</symbol>
         <x>1075</x>
-        <y>1940</y>
+        <y>1910</y>
         <x1>0</x1>
         <y1>0</y1>
         <count>1</count>
@@ -83,7 +83,7 @@
         <value>O</value>
         <symbol>false</symbol>
         <x>1210</x>
-        <y>1940</y>
+        <y>1910</y>
         <x1>0</x1>
         <y1>0</y1>
         <count>1</count>
@@ -93,7 +93,7 @@
         <value>P</value>
         <symbol>false</symbol>
         <x>1355</x>
-        <y>1940</y>
+        <y>1910</y>
         <x1>0</x1>
         <y1>0</y1>
         <count>1</count>
@@ -103,7 +103,7 @@
         <value>A</value>
         <symbol>false</symbol>
         <x>150</x>
-        <y>2150</y>
+        <y>2120</y>
         <x1>0</x1>
         <y1>0</y1>
         <count>1</count>
@@ -113,7 +113,7 @@
         <value>S</value>
         <symbol>false</symbol>
         <x>295</x>
-        <y>2150</y>
+        <y>2120</y>
         <x1>0</x1>
         <y1>0</y1>
         <count>1</count>
@@ -123,7 +123,7 @@
         <value>D</value>
         <symbol>false</symbol>
         <x>435</x>
-        <y>2150</y>
+        <y>2120</y>
         <x1>0</x1>
         <y1>0</y1>
         <count>1</count>
@@ -133,7 +133,7 @@
         <value>F</value>
         <symbol>false</symbol>
         <x>575</x>
-        <y>2150</y>
+        <y>2120</y>
         <x1>0</x1>
         <y1>0</y1>
         <count>1</count>
@@ -143,7 +143,7 @@
         <value>G</value>
         <symbol>false</symbol>
         <x>720</x>
-        <y>2150</y>
+        <y>2120</y>
         <x1>0</x1>
         <y1>0</y1>
         <count>1</count>
@@ -153,7 +153,7 @@
         <value>H</value>
         <symbol>false</symbol>
         <x>860</x>
-        <y>2150</y>
+        <y>2120</y>
         <x1>0</x1>
         <y1>0</y1>
         <count>1</count>
@@ -163,7 +163,7 @@
         <value>J</value>
         <symbol>false</symbol>
         <x>1000</x>
-        <y>2150</y>
+        <y>2120</y>
         <x1>0</x1>
         <y1>0</y1>
         <count>1</count>
@@ -173,7 +173,7 @@
         <value>K</value>
         <symbol>false</symbol>
         <x>1140</x>
-        <y>2150</y>
+        <y>2120</y>
         <x1>0</x1>
         <y1>0</y1>
         <count>1</count>
@@ -183,7 +183,7 @@
         <value>L</value>
         <symbol>false</symbol>
         <x>1285</x>
-        <y>2150</y>
+        <y>2120</y>
         <x1>0</x1>
         <y1>0</y1>
         <count>1</count>
@@ -193,7 +193,7 @@
         <value>Z</value>
         <symbol>false</symbol>
         <x>290</x>
-        <y>2350</y>
+        <y>2320</y>
         <x1>0</x1>
         <y1>0</y1>
         <count>1</count>
@@ -203,7 +203,7 @@
         <value>X</value>
         <symbol>false</symbol>
         <x>430</x>
-        <y>2350</y>
+        <y>2320</y>
         <x1>0</x1>
         <y1>0</y1>
         <count>1</count>
@@ -213,7 +213,7 @@
         <value>C</value>
         <symbol>false</symbol>
         <x>580</x>
-        <y>2350</y>
+        <y>2320</y>
         <x1>0</x1>
         <y1>0</y1>
         <count>1</count>
@@ -223,7 +223,7 @@
         <value>V</value>
         <symbol>false</symbol>
         <x>729</x>
-        <y>2350</y>
+        <y>2320</y>
         <x1>0</x1>
         <y1>0</y1>
         <count>1</count>
@@ -233,7 +233,7 @@
         <value>B</value>
         <symbol>false</symbol>
         <x>860</x>
-        <y>2350</y>
+        <y>2320</y>
         <x1>0</x1>
         <y1>0</y1>
         <count>1</count>
@@ -243,7 +243,7 @@
         <value>N</value>
         <symbol>false</symbol>
         <x>1000</x>
-        <y>2350</y>
+        <y>2320</y>
         <x1>0</x1>
         <y1>0</y1>
         <count>1</count>
@@ -253,7 +253,7 @@
         <value>M</value>
         <symbol>false</symbol>
         <x>1140</x>
-        <y>2350</y>
+        <y>2320</y>
         <x1>0</x1>
         <y1>0</y1>
         <count>1</count>
@@ -264,9 +264,101 @@
         <value> </value>
         <symbol>true</symbol>
         <x>790</x>
-        <y>2550</y>
+        <y>2535</y>
         <x1>0</x1>
         <y1>0</y1>
         <count>1</count>
     </Key>
+
+    <!-- 123 Key -->
+    <Key>
+        <value>123</value>
+        <symbol>true</symbol>
+        <x>110</x>
+        <y>2530</y>
+        <x1>0</x1>
+        <y1>0</y1>
+        <count>1</count>
+    </Key>
+
+    <Key>
+        <value>.</value>
+        <symbol>true</symbol>
+        <x>930</x>
+        <y>2320</y>
+        <x1>0</x1>
+        <y1>0</y1>
+        <count>1</count>
+    </Key>
+
+    <Key>
+        <value>?</value>
+        <symbol>true</symbol>
+        <x>1070</x>
+        <y>2315</y>
+        <x1>0</x1>
+        <y1>0</y1>
+        <count>1</count>
+    </Key>
+
+    <Key>
+        <value>,</value>
+        <symbol>true</symbol>
+        <x>790</x>
+        <y>2315</y>
+        <x1>0</x1>
+        <y1>0</y1>
+        <count>1</count>
+    </Key>
+
+    <Key>
+        <value>;</value>
+        <symbol>true</symbol>
+        <x>650</x>
+        <y>2315</y>
+        <x1>0</x1>
+        <y1>0</y1>
+        <count>1</count>
+    </Key>
+
+    <Key>
+        <value>"</value>
+        <symbol>true</symbol>
+        <x>500</x>
+        <y>2315</y>
+        <x1>0</x1>
+        <y1>0</y1>
+        <count>1</count>
+    </Key>
+
+    <Key>
+        <value>'</value>
+        <symbol>true</symbol>
+        <x>365</x>
+        <y>2315</y>
+        <x1>0</x1>
+        <y1>0</y1>
+        <count>1</count>
+    </Key>
+
+    <Key>
+        <value>!</value>
+        <symbol>true</symbol>
+        <x>90</x>
+        <y>2115</y>
+        <x1>0</x1>
+        <y1>0</y1>
+        <count>1</count>
+    </Key>
+
+    <Key>
+        <value>~</value>
+        <symbol>true</symbol>
+        <x>500</x>
+        <y>2120</y>
+        <x1>0</x1>
+        <y1>0</y1>
+        <count>1</count>
+    </Key>
+
 </Keyboard>

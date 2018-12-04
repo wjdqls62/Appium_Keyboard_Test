@@ -32,4 +32,5 @@
     <appPackage>sonjb.phillit.ime_counter</appPackage>
     <appActivity>sonjb.phillit.ime_counter.View.MainActivity</appActivity>
     <autoGrantPermissions>true</autoGrantPermissions>
+    <noReset>true</noReset>
 </Device>
